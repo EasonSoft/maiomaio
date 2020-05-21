@@ -10,7 +10,33 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api1': {
+        target: 'http://www.h5yjy.com', // 你请求的第三方接口
+        changeOrigin: true, // 在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样服务端和服务端进行数据的交互就不会有跨域问题
+        pathRewrite: {  // 路径重写，
+          '^/api1': '/api'  // 替换target中的请求地址，也就是说以后你在请求http://api.douban.com/v2/XXXXX这个地址的时候直接写成/api即可。
+        }
+      },
+      // https://douban.uieee.com/v2/movie/search
+      // https://api.douban.com/v2/movie/subject/26871938?apikey=0df993c66c0c636e29ecbb5344252a4a
+      '/api2': {
+        target: 'https://douban.uieee.com/v2', // 你请求的第三方接口
+        changeOrigin: true, // 在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样服务端和服务端进行数据的交互就不会有跨域问题
+        pathRewrite: {  // 路径重写，
+          '^/api2': '/'  // 替换target中的请求地址，也就是说以后你在请求http://api.douban.com/v2/XXXXX这个地址的时候直接写成/api即可。
+        }
+      },
+      '/api3': {
+        target: 'https://api.douban.com/v2/movie',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api3': '/'
+        }
+
+      }
+
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -20,7 +46,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */

@@ -2,7 +2,7 @@
   "name": "maiomaio",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "easonsoft",
+  "author": "EasonSoft <2113928427@qq.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -10,6 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "better-scroll": "^1.15.2",
+    "element-ui": "^2.13.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
