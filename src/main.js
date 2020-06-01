@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from './stores'
 import vuex from 'vuex'
-Vue.use(vuex)
+
 
 Vue.config.productionTip = false
  
@@ -24,14 +24,14 @@ Vue.component('Loading',Loading)
 import MessageBox from '@/components/JS/MessageBox'
 Vue.component('MessageBox',MessageBox)
 
-import VueTouch from 'vue-touch'
-Vue.use(VueTouch, {name: 'v-touch'})
+// import VueTouch from 'vue-touch'
+// Vue.use(VueTouch, {name: 'v-touch'})
 /* eslint-disable no-new */
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
-
+Vue.use(vuex);
 new Vue({
   el: '#app',
   router,axios,store,
